@@ -1,0 +1,34 @@
+{
+        
+    "manifest_version":3,
+    "name": "Catan AI Assistant",
+    "version": "1.0.0",
+    "description": "Real-time AI Assistant for Catan Online",
+
+    "permissions":["activeTab","storage"],
+    "host_permissions": ["https://colonist.io/*","*://localhost/*"],
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.colonist.io/*"],
+      "js": ["content/content-script.js"], 
+      "css": ["content/overlay-styles.css"], 
+      "run_at": "document_end"      
+    }
+  ],
+
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+
+    "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Catan AI Assistant",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  }
+}
