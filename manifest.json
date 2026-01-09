@@ -5,14 +5,14 @@
     "version": "1.0.0",
     "description": "Real-time AI Assistant for Catan Online",
 
-    "permissions":["activeTab","storage"],
-    "host_permissions": ["https://colonist.io/*","*://localhost/*"],
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["https://colonist.io/*","https://*.colonist.io/*","http://localhost/*"],
 
   "content_scripts": [
     {
-      "matches": ["*://*.colonist.io/*"],
+      "matches": ["https://colonist.io/*", "https://*.colonist.io/*"],
       "js": ["content/content-script.js"], 
-      "css": ["content/overlay-styles.css"], 
+      "css": ["ui/overlay-styles.css"], 
       "run_at": "document_end"      
     }
   ],
